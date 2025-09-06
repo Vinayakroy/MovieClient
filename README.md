@@ -20,3 +20,10 @@ Imagine a traditional website where every time you click a link, the entire page
 
 Frontend routing solves this problem by allowing us to change the content displayed on the screen without reloading the entire webpage. This creates a much smoother, faster, and more app-like experience. It's like navigating through different sections of a large store without ever leaving the building.
 
+For our MovieClient application, this means:
+  When you visit /, you see the homepage with all the movies.
+  Clicking a movie's "Play Trailer" button takes you to /Trailer/:id (where :id is the movie's unique YouTube ID) to watch its trailer, without the whole page blinking.
+  Clicking "Reviews" for a movie leads you to /Reviews/:id (where :id is the movie's unique IMDb ID) to read and write reviews, again, seamlessly.
+  
+This "internal GPS" helps the application decide which specific part (or "page") of the website to show you based on the URL in your browser's address bar.
+
