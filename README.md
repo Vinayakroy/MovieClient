@@ -32,5 +32,31 @@ Our MovieClient project uses a popular library called react-router-dom to handle
 
 Let's look at the central place where our routes are defined: movie-gold-v1/src/App.js.
 
+// movie-gold-v1/src/App.js (simplified)
+import {Routes, Route} from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './components/home/Home';
+import Trailer from './components/trailer/Trailer';
+import Reviews from './components/reviews/Reviews';
+import Header from './components/header/Header'; // Contains navigation links
+
+function App() {
+  return (
+    <div className="App">
+      <Header/> {/* The navigation bar */}
+      <Routes> {/* This is where we define our "map" */}
+          <Route path="/" element={<Layout/>}>
+            <Route path="/" element={<Home /* ... */ />} ></Route>
+            <Route path="/Trailer/:ytTrailerId" element={<Trailer/>}></Route>
+            <Route path="/Reviews/:movieId" element={<Reviews /* ... */ />}></Route>
+          </Route>
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
+
+
 
 
