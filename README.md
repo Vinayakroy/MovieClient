@@ -57,6 +57,16 @@ function App() {
 
 export default App;
 
+In this snippet:
+
+<Header/> is our navigation bar, which we'll explore more in Chapter 2: Page Layout & Navigation. It contains links that trigger our routes.
+<Routes> is like the main container for all our possible paths. It listens to the browser's URL.
+<Route> components are individual entries in our map. Each one says: "If the URL matches this path, show this element (React component)."
+Notice the special routes:
+
+/Trailer/:ytTrailerId: The :ytTrailerId part is a dynamic parameter. It means this part of the URL can change (e.g., /Trailer/someYouTubeID), and our Trailer component will receive that someYouTubeID value.
+/Reviews/:movieId: Similarly, :movieId is another dynamic parameter for our Reviews page.
+
 
 
 
