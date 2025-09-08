@@ -27,3 +27,10 @@ For our MovieClient application, this means:
   
 This "internal GPS" helps the application decide which specific part (or "page") of the website to show you based on the URL in your browser's address bar.
 
+## How Our MovieClient Uses Routing: The Basics
+Our MovieClient project uses a popular library called react-router-dom to handle frontend routing. It gives us special tools (called "components" and "hooks") to define routes and navigate between them.
+
+Let's look at the central place where our routes are defined: movie-gold-v1/src/App.js.
+
+
+
