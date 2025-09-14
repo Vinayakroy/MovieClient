@@ -67,6 +67,9 @@ Notice the special routes:
 /Trailer/:ytTrailerId: The :ytTrailerId part is a dynamic parameter. It means this part of the URL can change (e.g., /Trailer/someYouTubeID), and our Trailer component will receive that someYouTubeID value.
 /Reviews/:movieId: Similarly, :movieId is another dynamic parameter for our Reviews page.
 
+## How Navigation Works: Clicking a Link
+When you click a link in our application, the frontend router intercepts that click instead of letting the browser do a full page reload. It then updates the URL and displays the correct component.
 
+Let's trace what happens when a user navigates to a movie trailer:
 
 
