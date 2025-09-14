@@ -111,3 +111,21 @@ We've seen the App.js routes already. One important detail is the nested <Route>
 // ...
 Here, <Layout/> is a parent component that all other "pages" will share. This is useful for things like headers, footers, or sidebars that remain constant while the main content changes.
 
+Let's look at movie-gold-v1/src/components/Layout.js:
+
+// movie-gold-v1/src/components/Layout.js
+import { Outlet } from "react-router-dom";
+import React from 'react'
+
+const Layout = () =>{
+    return (
+        <main>
+            <Outlet/> {/* This is where the actual "page" content will be displayed */}
+        </main>
+    )
+}
+
+export default Layout
+The <Outlet/> component from react-router-dom is a placeholder. When a child route (like / or /Trailer/:id) matches, its component (e.g., Home or Trailer) will be rendered inside the <Outlet/> of the parent Layout component. This means the Layout component provides a consistent "shell" for all routed pages.
+
+
