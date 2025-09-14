@@ -96,4 +96,18 @@ root.render(
 );
 The <BrowserRouter> component wraps our entire application (<App />). It's like putting our whole "store" inside a building that has a proper address system. It listens to changes in the browser's URL and tells our react-router-dom system about them.
 
+## 2. Defining Routes and Layouts (movie-gold-v1/src/App.js & movie-gold-v1/src/components/Layout.js)
+We've seen the App.js routes already. One important detail is the nested <Route> structure:
+
+// movie-gold-v1/src/App.js (Routes section)
+// ...
+      <Routes>
+          <Route path="/" element={<Layout/>}> {/* Parent route */}
+            <Route path="/" element={<Home movies={movies} />} ></Route> {/* Child route for Home */}
+            <Route path="/Trailer/:ytTrailerId" element={<Trailer/>}></Route> {/* Child route for Trailer */}
+            <Route path="/Reviews/:movieId" element={<Reviews /* ... */ />}></Route> {/* Child route for Reviews */}
+          </Route>
+      </Routes>
+// ...
+Here, <Layout/> is a parent component that all other "pages" will share. This is useful for things like headers, footers, or sidebars that remain constant while the main content changes.
 
