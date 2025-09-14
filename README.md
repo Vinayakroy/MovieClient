@@ -67,15 +67,33 @@ Notice the special routes:
 /Trailer/:ytTrailerId: The :ytTrailerId part is a dynamic parameter. It means this part of the URL can change (e.g., /Trailer/someYouTubeID), and our Trailer component will receive that someYouTubeID value.
 /Reviews/:movieId: Similarly, :movieId is another dynamic parameter for our Reviews page.
 
-Diving Deeper into the Code
-Let's look at the pieces that make this routing magic happen.
-
-1. Setting up the Router (movie-gold-v1/src/index.js)
-Before we can define routes, our entire application needs to be "wrapped" by a special component that enables routing. This happens in movie-gold-v1/src/index.js.
-
 ## How Navigation Works: Clicking a Link
 When you click a link in our application, the frontend router intercepts that click instead of letting the browser do a full page reload. It then updates the URL and displays the correct component.
 
 Let's trace what happens when a user navigates to a movie trailer:
+
+## Diving Deeper into the Code
+Let's look at the pieces that make this routing magic happen.
+
+## 1. Setting up the Router (movie-gold-v1/src/index.js)
+Before we can define routes, our entire application needs to be "wrapped" by a special component that enables routing. This happens in movie-gold-v1/src/index.js.
+
+// movie-gold-v1/src/index.js (simplified)
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter> {/* This is the key! */}
+      <Routes>
+          <Route path="/*" element={<App />}/> {/* Our main App component */}
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+);
+The <BrowserRouter> component wraps our entire application (<App />). It's like putting our whole "store" inside a building that has a proper address system. It listens to changes in the browser's URL and tells our react-router-dom system about them.
 
 
