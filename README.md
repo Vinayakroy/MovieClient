@@ -128,4 +128,34 @@ const Layout = () =>{
 export default Layout
 The <Outlet/> component from react-router-dom is a placeholder. When a child route (like / or /Trailer/:id) matches, its component (e.g., Home or Trailer) will be rendered inside the <Outlet/> of the parent Layout component. This means the Layout component provides a consistent "shell" for all routed pages.
 
+## 3. Navigating with Links (movie-gold-v1/src/components/header/Header.js & movie-gold-v1/src/components/hero/Hero.js)
+There are a few ways to navigate using react-router-dom.
+
+Using <NavLink> for Navigation Menus (movie-gold-v1/src/components/header/Header.js)
+
+For simple links in a navigation menu, <NavLink> is perfect. It's similar to a standard <a> tag but is "router-aware."
+
+// movie-gold-v1/src/components/header/Header.js (simplified)
+import { NavLink } from "react-router-dom";
+// ...
+
+const Header = () => {
+    return (
+        <Navbar /* ... */>
+            <Container fluid>
+                {/* ... brand logo ... */}
+                <Navbar.Collapse id="navbarScroll">
+                    <Nav /* ... */>
+                    <NavLink className="nav-link" to="/">Home</NavLink>
+                    <NavLink className="nav-link" to="/wathList">Watchlist</NavLink>
+                    </Nav>
+                    {/* ... buttons ... */}
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    )
+}
+export default Header
+
+
 
